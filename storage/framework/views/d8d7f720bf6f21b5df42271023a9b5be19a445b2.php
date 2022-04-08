@@ -1,6 +1,6 @@
 
 <?php $__env->startSection('title'); ?>
-    <?php echo app('translator')->get('translation.create-product'); ?>
+    Create Category
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('css'); ?>
     <link href="<?php echo e(URL::asset('assets/libs/dropzone/dropzone.min.css')); ?>" rel="stylesheet">

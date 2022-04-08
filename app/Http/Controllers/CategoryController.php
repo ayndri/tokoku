@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -35,7 +36,14 @@ class CategoryController extends Controller
 
         $kategori = new Category;
         $kategori->namaKategori = $request->namaKategori;
-        $kategori->slugKategori = $request->slugKategori;
+        if ( $request->slugKategori == null)
+        {
+            $kategori->slugKategori = Str::slug($request->namaKategori);
+        }
+        else
+        {
+            $kategori->slugKategori = $request->slugKategori;
+        }
         $kategori->deskKategori = $request->deskKategori;
         $kategori->fotoKategori = $namaFile;
         $kategori->save();
