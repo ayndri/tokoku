@@ -17,6 +17,11 @@ class CategoryController extends Controller
         return view('products/tags');
     }
 
+    public function yun()
+    {
+        return view('products/tags');
+    }
+
     public function addCategory(Request $request)
     {
         $request->validate([
